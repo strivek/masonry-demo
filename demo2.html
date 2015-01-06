@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>固定位置轮播</title>
+    <link rel="stylesheet" href="masonry-docs/bower_components/normalize-css/normalize.css" />
+    <style>
+    .masonry {
+        margin: 0 auto;
+        background: #EEE;
+        max-width: 950px;
+        position: relative;
+    }
+    .masonry .item {
+        width: 300px;
+        height: 150px;
+        float: left;
+        background: #D26;
+        border: 2px solid #333;
+        border-color: hsla(0, 0%, 0%, 0.5);
+        border-radius: 5px;
+    }
+    .masonry .h2 {
+        height: 300px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .masonry .h3 {
+        height: 450px;
+        position: absolute;
+        top: 350px;
+        left: 0;
+    }
+    #more,
+    .m-load {
+        padding: 20px;
+        width: 200px;
+        height: 80px;
+        margin: 0 auto;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Masonry - columnWidth</h1>
+    <div id="container" class="masonry">
+        <div class="item h2 stamp">我是搜索</div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item "></div>
+        <div class="item h3 stamp">我是排行榜</div>
+        <div class="item "></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item "></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item "></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="m-load">
+        <button id="more">加载更多</button>
+    </div>
+    <script src="masonry-docs/components/jquery/jquery.min.js"></script>
+    <script src="masonry-docs/masonry.pkgd.min.js"></script>
+    <script src="masonry-docs/bower_components/imagesloaded/imagesloaded.js"></script>
+    <script>
+    // or with jQuery
+    // initialize Masonry
+    var $container = $('#container').masonry();
+    //获取固定元素
+    var stampElem = $(".stamp");
+
+    // layout Masonry again after all images have loaded
+    $container.imagesLoaded(function() {
+        $container.masonry();
+        //将固定元素初始化
+        $('#container').masonry('stamp', stampElem);
+    });
+
+    $("#more").on("click", function() {
+        var html = $('<div class="item">新添加</div><div class="item">新添加</div>');
+        $("#container").append(html);
+        $container.masonry('appended', html);
+    })
+    </script>
+</body>
+
+</html>
