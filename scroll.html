@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>scroll</title>
+    <style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+    .wrap {
+    	
+    }
+    .inner {
+    	
+    }
+    h1 {
+        background-color: lightgreen;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="inner">
+             <h1>你好</h1>
+        </div>
+    </div>
+    <script>
+    function getViewPortH() {
+        return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    }
+
+    function scrollY() {
+        return window.pageYOffset || document.scrollTop;
+    }
+
+    //http://stackoverflow.com/a/5598797/989439
+    function getOffset(el) {
+        var offsetTop = 0,
+            offsetLeft = 0;
+        do {
+            if (!isNaN(el.offsetTop)) {
+                offsetTop += el.offsetTop;
+                console.log(offsetTop);
+            }
+            if (!isNaN(el.offsetLeft)) {
+                offsetLeft += el.offsetLeft;
+            }
+        } while (el = el.offsetParent)
+
+        return {
+            top: offsetTop,
+            left: offsetLeft
+        }
+    }
+    var elem = document.querySelector("h1");
+    
+    getOffset(elem);
+
+    </script>
+</body>
+
+</html>
