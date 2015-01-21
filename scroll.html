@@ -4,62 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <title>scroll</title>
-    <style>
-	*{
-		padding: 0;
-		margin: 0;
-	}
-    .wrap {
-    	
-    }
-    .inner {
-    	
-    }
-    h1 {
-        background-color: lightgreen;
-    }
-    </style>
+    <link rel="stylesheet" href="css/scroll.css">
 </head>
 
 <body>
     <div class="wrap">
-        <div class="inner">
-             <h1>你好</h1>
-        </div>
+        <ul class="list1">
+            <li><a href="">box01</a>
+            </li>
+            <li><a href="">box02</a>
+            </li>
+            <li><a href="">box03</a>
+            </li>
+            <li><a href="">box04</a>
+            </li>
+            <li><a href="">box05</a>
+            </li>
+            <li><a href="">box06</a>
+            </li>
+            <li><a href="">box07</a>
+            </li>
+            <li><a href="">box08</a>
+            </li>
+            <li><a href="">box09</a>
+            </li>
+            <li><a href="">box10</a>
+            </li>
+        </ul>
+        <ul class="list2">
+            <li><a href="">box01</a>
+            </li>
+            <li><a href="">box02</a>
+            </li>
+            <li><a href="">box03</a>
+            </li>
+            <li><a href="">box04</a>
+            </li>
+            <li><a href="">box05</a>
+            </li>
+            <li><a href="">box06</a>
+            </li>
+            <li><a href="">box07</a>
+            </li>
+            <li><a href="">box08</a>
+            </li>
+            <li><a href="">box09</a>
+            </li>
+            <li><a href="">box10</a>
+            </li>
+        </ul>
     </div>
-    <script>
-    function getViewPortH() {
-        return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    }
-
-    function scrollY() {
-        return window.pageYOffset || document.scrollTop;
-    }
-
-    //http://stackoverflow.com/a/5598797/989439
-    function getOffset(el) {
-        var offsetTop = 0,
-            offsetLeft = 0;
-        do {
-            if (!isNaN(el.offsetTop)) {
-                offsetTop += el.offsetTop;
-                console.log(offsetTop);
-            }
-            if (!isNaN(el.offsetLeft)) {
-                offsetLeft += el.offsetLeft;
-            }
-        } while (el = el.offsetParent)
-
-        return {
-            top: offsetTop,
-            left: offsetLeft
-        }
-    }
-    var elem = document.querySelector("h1");
-    
-    getOffset(elem);
-
-    </script>
+    <script src="javascript/scroll.js"></script>
 </body>
 
 </html>
