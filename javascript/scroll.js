@@ -38,7 +38,19 @@ function inViewport(el, h) {
         windowBottomToBottom = 1 - (docH - scrolled - viewPort) / elH;
     return windowBottomToBottom;
 }
+
+function inViewport1(el, h) {
+    var elNavToBottom = el.offsetHeight,
+        elNavToRoot = getOffset(el).top,
+        scrolled = scrollY(),
+        viewPort = getViewportH(),
+        windowBottomToBottom = 1 - (elNavToBottom + elNavToRoot - scrolled - viewPort) / elNavToBottom;
+
+    return windowBottomToBottom >= 0.7 && windowBottomToBottom <= 0.98;
+
+}
+
 var elem = document.querySelector(".list2");
 window.addEventListener('scroll', function() {
-    console.log(inViewport(elem));
+    console.log(inViewport1(elem));
 })
