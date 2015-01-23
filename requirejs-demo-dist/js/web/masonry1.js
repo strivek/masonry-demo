@@ -1,0 +1,1 @@
+define(["jquery","./masonry/masonry.pkgd.min","./imagesloaded/imagesloaded"],function(e,t,n){function o(){var t=e('<div class="item">新添加</div><div class="item">新添加</div>');e(r).append(t),s.appended(t)}var r=document.getElementById("container"),i=document.getElementById("more"),s=new t(r);n(r,function(){s.layout()}),e(i).on("click",o)});
