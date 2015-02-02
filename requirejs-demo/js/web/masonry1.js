@@ -4,7 +4,7 @@ define(['jquery', './masonry/masonry.pkgd.min', './imagesloaded/imagesloaded'], 
     var msnry = new Masonry(container);
     // layout Masonry again after all images have loaded
     imagesloaded(container, function() {
-
+        msnry.layout();
     });
     $(more).on("click", addItem);
 
