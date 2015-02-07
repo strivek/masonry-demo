@@ -1,4 +1,4 @@
-define(['jquery', './masonry/masonry.pkgd.min', './imagesloaded/imagesloaded'], function($, Masonry, imagesloaded) {
+define(['./masonry/masonry.pkgd.min', './imagesloaded/imagesloaded','jquery'], function(Masonry, imagesloaded,$) {
     var container = document.getElementById("container");
     var more = document.getElementById("more");
     var msnry = new Masonry(container);
